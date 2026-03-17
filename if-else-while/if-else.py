@@ -11,3 +11,6 @@ else:
 # O código solicita ao usuário que digite um número, converte a entrada para um inteiro e, em seguida, verifica se o número é maior que zero para classificar como positivo ou negativo.    
 # Se o número for maior que zero, a mensagem "positivo" será exibida; caso contrário, a mensagem "negativo" será exibida.   
 # Este é um exemplo simples de como usar a estrutura condicional if/else em Python para tomar decisões com base em condições.
+
+
+       

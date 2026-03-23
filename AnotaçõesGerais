@@ -1,0 +1,6 @@
+a = int(input("digite um numero: "))
+b = int(input("digite outro numero: "))
+x = a + b
+print("X = ", x)
+
+#forma de fazer uma soma com o input, onde o usuario digita os numeros que quer somar, e o print é para mostrar o resultado da soma.

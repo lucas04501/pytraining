@@ -1,0 +1,117 @@
+Vamos pegar um exemplo simples:
+
+[10, 5, 2, 3]
+🌳 Como o Quicksort vira uma árvore
+
+Cada chamada da função vira um “nó” da árvore.
+
+1) Primeira chamada
+quicksort([10, 5, 2, 3])
+
+Pivô = 10
+
+menores → [5, 2, 3]
+maiores → []
+
+Árvore começa assim:
+
+                [10, 5, 2, 3]
+                  (pivô 10)
+                 /         \
+        [5, 2, 3]           []
+2) Segunda chamada (lado esquerdo)
+
+Agora resolve:
+
+quicksort([5, 2, 3])
+
+Pivô = 5
+
+menores → [2, 3]
+maiores → []
+
+Árvore:
+
+                [10, 5, 2, 3]
+                  (10)
+                 /    \
+        [5, 2, 3]      []
+          (5)
+         /   \
+     [2, 3]   []
+3) Terceira chamada
+quicksort([2, 3])
+
+Pivô = 2
+
+menores → []
+maiores → [3]
+
+Árvore:
+
+                [10, 5, 2, 3]
+                  (10)
+                 /    \
+        [5, 2, 3]      []
+          (5)
+         /   \
+     [2, 3]   []
+      (2)
+     /   \
+    []   [3]
+4) Casos base (folhas)
+
+Agora chegamos nas listas pequenas:
+
+[] → já está ordenado
+[3] → já está ordenado
+
+Esses são os “fins” da árvore.
+
+🔁 Subindo a árvore (montando o resultado)
+
+Agora vem a parte mais importante: juntar os resultados
+
+Começando de baixo:
+[] + [2] + [3] = [2, 3]
+
+Depois:
+
+[2, 3] + [5] = [2, 3, 5]
+
+Depois:
+
+[2, 3, 5] + [10] = [2, 3, 5, 10]
+🧠 Forma mental simples
+
+Pensa assim:
+
+Descer na árvore = dividir
+Subir na árvore = juntar ordenado
+🎯 Visual final (com resultado embutido)
+                [10, 5, 2, 3]
+                     |
+        --------------------------------
+        |                              |
+    [5, 2, 3]                        []
+        |
+   --------------
+   |            |
+ [2, 3]        []
+   |
+ -------
+ |     |
+[]     [3]
+
+⬆ SUBINDO:
+
+[] + [2] + [3] = [2,3]
+[2,3] + [5] = [2,3,5]
+[2,3,5] + [10] = [2,3,5,10]
+💡 Dica importante
+
+Se você entendeu essa árvore, você entendeu:
+
+recursão
+dividir para conquistar
+quicksort
